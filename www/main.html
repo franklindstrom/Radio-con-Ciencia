@@ -1,0 +1,38 @@
+<ion-view name="main">
+    <ion-content scroll="false">
+        <img id="layout-back" src="img/main_back.png"/>
+        <div id="radio-player" class="radio-player">
+            <div class="col-4">
+                <img id="main-mark-image" src="img/mark.png"/>
+            </div>
+            <div class="col-2">
+                <div class="radio-control-container">
+                    <video id="radioPlayer">
+                        <source src="http://9433.live.streamtheworld.com/CONCIENCIA_SO1.mp3" type="audio/mpeg" />
+                    </video>
+                    <img id="ring" class="radio-control" src="img/ring.png" />
+                    <img id="radio-loading-ring" class="radio-control" src="img/ring.png" style="display: none;" />
+                    <img id="radio-loading-playButton" class="radio-control" src="img/playButton.png" style="display: none;" />
+                    <img id="playButton" class="radio-control" src="img/playButton.png" ng-click="onRadioPlay()" />
+                    <img id="stopButton" class="radio-control" src="img/stopButton.png" ng-click="onRadioPause()" style="display: none;"/>
+                </div>
+            </div>
+            <div class="col-4">
+                <label id="radio-topic">Radio en línea</label>
+            </div>
+            <hr/>
+            <label id="noticias_title">Últimas noticias</label>
+        </div>
+
+        <div class="news-container">
+            <div class="news-list-item" ng-repeat="(index, news) in newsList" ng-click="onNewsClicked(index)">
+                <img id="news-image" ng-src="{{news.image}}" ng-click="onNewsClicked(index)"/>
+                <label id="news-title" class="news-title">{{news.title}}</label>
+            </div>
+        </div>
+
+        <div class="main-bottom-bar">
+            <img id="main-logo" src="img/main_logo.png" ng-click="onLinkWebSite()" />
+        </div>
+    </ion-content>
+</ion-view>
